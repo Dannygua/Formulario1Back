@@ -5,19 +5,19 @@ import InfoRoutes from "./routes/infoRoutes.js";
 const app = express();
 app.use(express.json());
 
-const whitelist = ['http://localhost:3000'];
+// const whitelist = ['http://localhost:3000'];
 
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (whitelist.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error("Error de Cors"));
-        }
-    },
-};
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//         if (whitelist.includes(origin)) {
+//             callback(null, true);
+//         } else {
+//             callback(new Error("Error de Cors"));
+//         }
+//     },
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use("/api/Info", InfoRoutes);
 

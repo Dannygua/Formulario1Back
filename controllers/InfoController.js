@@ -98,8 +98,80 @@ const getInfo2 = async (req, res) => {
 
 }
 
+const getInfo3 = async (req, res) => {
+    const { PagoInteres, Monto, Plazo, Periodicidad } = req.body;
+    try {
+        const response = await axios.post(
+            "https://apitest.denariusonline.com/api/SimularInversion",
+            {
+                meSimulacion: {
+                    Cabecera: {
+                        Canal: "IN",
+                        Oficina: 11,
+                        Organizacion: "KuryWayta",
+                        Usuario: "Kurywaytatest",
+                    },
+                    PagoInteres: "1",
+                    Monto: 500,
+                    Plazo: 31,
+                    Periodicidad: 30,
+                },
+            },
+            {
+                headers: {
+                    "Ocp-Apim-Subscription-Key": "b5bfa45dc0a342939f940e18adeb75b7",
+                },
+            }
+        );
+
+        console.log(response.data);
+        res.json(response.data)
+    } catch (error) {
+        console.error(error.message);
+    }
+};
+
+const getInfo4 = async (req, res) => {
+
+    try {
+        const response = await axios.post(
+            "https://apitest.denariusonline.com/api/SimularCredito",
+            {
+                meSimulacion: {
+                    Cabecera: {
+                        Canal: "IN",
+                        Oficina: 11,
+                        Organizacion: "KuryWayta",
+                        Usuario: "Kurywaytatest",
+                    },
+                    TipoCredito: "04",
+                    Monto: 1000,
+                    Plazo: 12,
+                    TipoPlazo: "M",
+                    //IdMoneda: parseInt(formulario.IdMoneda),
+                    IdMoneda: 1, //Valor por defecto para dólares americanos
+                    TipoTabla: "F",
+                    VentasAnuales: 1000,
+                    DiaPago: 1,
+                },
+            },
+            {
+                headers: {
+                    "Ocp-Apim-Subscription-Key": "b5bfa45dc0a342939f940e18adeb75b7",
+                },
+            }
+        );
+
+        console.log(response.data);
+        res.json(response.data)
+    } catch (error) {
+        console.error(error.message);
+    }
+};
 
 export {
     getInfo,
-    getInfo2
+    getInfo2,
+    getInfo3,
+    getInfo4
 };
