@@ -133,6 +133,8 @@ const getInfo3 = async (req, res) => {
 
 const getInfo4 = async (req, res) => {
 
+    const { TipoCredito, Monto, Plazo, TipoPlazo, IdMoneda, TipoTabla, VentasAnuales, DiaPago } = req.body;
+
     try {
         const response = await axios.post(
             "https://apitest.denariusonline.com/api/SimularCredito",
@@ -144,15 +146,15 @@ const getInfo4 = async (req, res) => {
                         Organizacion: "KuryWayta",
                         Usuario: "Kurywaytatest",
                     },
-                    TipoCredito: "04",
-                    Monto: 1000,
-                    Plazo: 12,
-                    TipoPlazo: "M",
+                    TipoCredito,
+                    Monto,
+                    Plazo,
+                    TipoPlazo,
                     //IdMoneda: parseInt(formulario.IdMoneda),
-                    IdMoneda: 1, //Valor por defecto para dólares americanos
-                    TipoTabla: "F",
-                    VentasAnuales: 1000,
-                    DiaPago: 1,
+                    IdMoneda, //Valor por defecto para dólares americanos
+                    TipoTabla,
+                    VentasAnuales,
+                    DiaPago,
                 },
             },
             {
