@@ -171,9 +171,58 @@ const getInfo4 = async (req, res) => {
     }
 };
 
+const getInfo5 = async (req, res) => {
+
+    const { FechaInicio, MontoMensual, Plazo } = req.body;
+
+    try {
+        const response = await axios.post(
+            "https://apitest.denariusonline.com/api/SimularAhorroProgramado",
+
+            {
+
+                "meSimular": {
+
+                    Cabecera: {
+
+                        Canal: "IN",
+
+                        Oficina: 11,
+
+                        Organizacion: "KuryWayta",
+
+                        Usuario: "Kurywaytatest"
+
+                    },
+
+                    FechaInicio,
+
+                    MontoMensual,
+
+                    Plazo
+
+                }
+
+            },
+            {
+                headers: {
+                    "Ocp-Apim-Subscription-Key": "b5bfa45dc0a342939f940e18adeb75b7",
+                },
+            }
+        );
+
+        console.log(response.data);
+        res.json(response.data)
+    } catch (error) {
+        console.error(error.message);
+    }
+};
+
+
 export {
     getInfo,
     getInfo2,
     getInfo3,
-    getInfo4
+    getInfo4,
+    getInfo5
 };
