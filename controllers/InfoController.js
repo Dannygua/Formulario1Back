@@ -111,10 +111,10 @@ const getInfo3 = async (req, res) => {
                         Organizacion: "KuryWayta",
                         Usuario: "Kurywaytatest",
                     },
-                    PagoInteres: "1",
-                    Monto: 500,
-                    Plazo: 31,
-                    Periodicidad: 30,
+                    PagoInteres,
+                    Monto,
+                    Plazo,
+                    Periodicidad,
                 },
             },
             {
@@ -184,23 +184,15 @@ const getInfo5 = async (req, res) => {
                 "meSimular": {
 
                     Cabecera: {
-
                         Canal: "IN",
-
                         Oficina: 11,
-
                         Organizacion: "KuryWayta",
-
                         Usuario: "Kurywaytatest"
 
                     },
-
                     FechaInicio,
-
                     MontoMensual,
-
                     Plazo
-
                 }
 
             },
