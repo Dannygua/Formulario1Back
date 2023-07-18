@@ -5,7 +5,7 @@ import InfoRoutes from "./routes/infoRoutes.js";
 const app = express();
 app.use(express.json());
 
-const whitelist = ['https://incoop.coop'];
+const whitelist = ['https://incoop.coop', 'http://localhost:3000/'];
 
 const corsOptions = {
     origin: function (origin, callback) {
