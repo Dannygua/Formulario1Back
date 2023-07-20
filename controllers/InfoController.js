@@ -16,8 +16,8 @@ const getInfo = async (req, res) => {
         </soap12:Header>
         <soap12:Body>
           <ObtenerDataClickFull xmlns="http://tempuri.org/">
-            <tipoDocumento>${tipoDocumento}</tipoDocumento>
-            <numeroDocumento>${numeroDocumento}</numeroDocumento>
+            <tipoDocumento>"C"</tipoDocumento>
+            <numeroDocumento>"1646941532"</numeroDocumento>
           </ObtenerDataClickFull>
         </soap12:Body>
       </soap12:Envelope>`;
@@ -73,8 +73,8 @@ const getInfo2 = async (req, res) => {
         <soap:Body>
           <ObtenerNivelDireccionesyTelefonos xmlns="http://www.creditreport.ec/">
             <idReportePadre>0</idReportePadre>
-            <tipoDocumento>${tipoDocumento}</tipoDocumento>
-            <numeroDocumento>${numeroDocumento}</numeroDocumento>
+            <tipoDocumento>"C"</tipoDocumento>
+            <numeroDocumento>"1646941532"</numeroDocumento>
           </ObtenerNivelDireccionesyTelefonos>
         </soap:Body>
       </soap:Envelope>`;
