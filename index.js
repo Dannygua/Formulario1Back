@@ -8,13 +8,13 @@ app.use(express.json());
 const whitelist = ["https://incoop.coop", "http://localhost:3000"];
 
 const corsOptions = {
-    origin: function (origin, callback) {
-        if (whitelist.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error("Error de Cors"));
-        }
-    },
+  origin: function (origin, callback) {
+    if (whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Error de Cors"));
+    }
+  },
 };
 
 app.use(cors(corsOptions));
@@ -24,6 +24,6 @@ app.use("/api/Info", InfoRoutes);
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`);
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
 7;

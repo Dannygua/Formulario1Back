@@ -118,15 +118,16 @@ const getInfo2 = async (req, res) => {
 const getInfo3 = async (req, res) => {
   const { PagoInteres, Monto, Plazo, Periodicidad } = req.body;
   try {
+    //"https://apitest.denariusonline.com/api/SimularInversion"
     const response = await axios.post(
-      "https://apitest.denariusonline.com/api/SimularInversion",
+      "https://apicore.denariusonline.com/bancaonline/SimularInversion",
       {
         meSimulacion: {
           Cabecera: {
             Canal: "IN",
             Oficina: 11,
             Organizacion: "KuryWayta",
-            Usuario: "Kurywaytatest",
+            Usuario: "diemárquez",
           },
           PagoInteres,
           Monto,
@@ -136,7 +137,7 @@ const getInfo3 = async (req, res) => {
       },
       {
         headers: {
-          "Ocp-Apim-Subscription-Key": "b5bfa45dc0a342939f940e18adeb75b7",
+          "Ocp-Apim-Subscription-Key": "cdf77a8c76c8490a93fb5b61ac6b61fd",
         },
       }
     );
@@ -162,14 +163,14 @@ const getInfo4 = async (req, res) => {
 
   try {
     const response = await axios.post(
-      "https://apitest.denariusonline.com/api/SimularCredito",
+      "https://apicore.denariusonline.com/bancaonline/SimularCredito",
       {
         meSimulacion: {
           Cabecera: {
             Canal: "IN",
             Oficina: 11,
             Organizacion: "KuryWayta",
-            Usuario: "Kurywaytatest",
+            Usuario: "diemárquez",
           },
           TipoCredito,
           Monto,
@@ -184,7 +185,7 @@ const getInfo4 = async (req, res) => {
       },
       {
         headers: {
-          "Ocp-Apim-Subscription-Key": "b5bfa45dc0a342939f940e18adeb75b7",
+          "Ocp-Apim-Subscription-Key": "cdf77a8c76c8490a93fb5b61ac6b61fd",
         },
       }
     );
@@ -201,7 +202,7 @@ const getInfo5 = async (req, res) => {
 
   try {
     const response = await axios.post(
-      "https://apitest.denariusonline.com/api/SimularAhorroProgramado",
+      "https://apicore.denariusonline.com/bancaonline/SimularAhorroProgramado",
 
       {
         meSimular: {
@@ -209,7 +210,7 @@ const getInfo5 = async (req, res) => {
             Canal: "IN",
             Oficina: 11,
             Organizacion: "KuryWayta",
-            Usuario: "Kurywaytatest",
+            Usuario: "diemárquez",
           },
           FechaInicio,
           MontoMensual,
@@ -218,7 +219,7 @@ const getInfo5 = async (req, res) => {
       },
       {
         headers: {
-          "Ocp-Apim-Subscription-Key": "b5bfa45dc0a342939f940e18adeb75b7",
+          "Ocp-Apim-Subscription-Key": "cdf77a8c76c8490a93fb5b61ac6b61fd",
         },
       }
     );
