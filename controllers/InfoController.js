@@ -163,7 +163,7 @@ const getInfo4 = async (req, res) => {
 
   try {
     const response = await axios.post(
-      "https://apicore.denariusonline.com/bancaonline/SimularCredito",
+      "https://apicore.denariusonline.com/bancaonline/SimularCredi",
       {
         meSimulacion: {
           Cabecera: {
@@ -202,7 +202,7 @@ const getInfo5 = async (req, res) => {
 
   try {
     const response = await axios.post(
-      "https://apicore.denariusonline.com/bancaonline/SimularAhorroProgramado",
+      "https://apicore.denariusonline.com/bancaonline/SimularAhorroProgramad",
 
       {
         meSimular: {
